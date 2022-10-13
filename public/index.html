@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link href="/css/all.css" rel="stylesheet" />
+    <title>Diskos Hosting | Console</title>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+
+    <script>
+      var images = [];
+      function preload() {
+        for (var i = 0; i < arguments.length; i++) {
+          images[i] = new Image();
+          images[i].src = preload.arguments[i];
+        }
+      }
+
+      preload(
+        "/img/logos/pterodactyl.svg",
+        "/img/logos/qemu.svg",
+        "/img/logos/cyberpanel.svg",
+        "/img/flags-svg/de.svg",
+        "/img/flags-svg/fi.svg",
+        "/img/flags-svg/us.svg",
+        "/img/logos/grass.png",
+        "/img/logos/bedrock.png",
+        "/img/logos/nodejs-2.png",
+        "/img/logos/python.png",
+        "/img/logos/minecraft.png",
+        "/img/logos/discord.svg"
+      );
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

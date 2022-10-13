@@ -1,0 +1,65 @@
+{
+    "code": "MCBUD1",
+    "hetznerPackage": null,
+    "locations": ["de1"],
+    "specs": {
+        "cpu": 100,
+        "ram": 1024,
+        "disk": 1024
+    },
+    "isDedicatedCpu": false,
+    "price": 2,
+    "options": {
+        "categories": ["mc1"],
+        "userLimit": -1,
+        "name": "512MB JAVA"
+    },
+    "container": [{
+        "runtime": "vanilla",
+        "allocationPort": 25565,
+        "egg": 5,
+        "docker_image": "ghcr.io/software-noob/pterodactyl-images:java_17",
+        "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+        "environment": {
+            "SERVER_JARFILE": "server.jar",
+            "VANILLA_VERSION": "latest"
+        },
+        "feature_limits": {
+            "databases": 1,
+            "backups": 1
+        }
+    }, {
+        "runtime": "paper",
+        "allocationPort": 25565,
+        "egg": 12,
+        "docker_image": "ghcr.io/software-noob/pterodactyl-images:java_17",
+        "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+        "environment": {
+            "SERVER_JARFILE": "server.jar",
+            "VANILLA_VERSION": "latest"
+        },
+        "feature_limits": {
+            "databases": 1,
+            "backups": 1
+        }       
+    }, {
+        "runtime": "bedrock",
+        "allocationPort": 19132,
+        "egg": 21,
+        "docker_image": "quay.io/parkervcp/pterodactyl-images:base_debian",
+        "startup": "./bedrock_server",
+        "environment": {
+            "BEDROCK_VERSION": "latest",
+            "LD_LIBRARY_PATH": ".",
+            "SERVERNAME": "Bedrock Dedicated Server",
+            "GAMEMODE": "survival",
+            "DIFFICULTY": "easy",
+            "CHEATS": "false"
+        },
+        "feature_limits": {
+            "databases": 1,
+            "backups": 1,
+            "split_limit": 0
+        }
+    }]
+}
